@@ -4,7 +4,8 @@ import os
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app) 
+# Izinkan HANYA URL Vercel Anda
+CORS(app, origins="https://ai-support-triage.vercel.app")
 
 MAKE_WEBHOOK_URL = "https://hook.us2.make.com/np4dlb1pi538gcl0qzdc2f5kqzimapk1"
 
