@@ -16,10 +16,18 @@ Nama Lengkap (NIM)
 
 ---
 
+## Link Video Demonstrasi
+
+    Link Video Demonstrasi Google Drive:
+
+    `https://drive.google.com/file/d/1Bv3I5Yj-l3_MMKG8WFV3ZD3KNY_QkmtV/view?usp=sharing`
+
+---
+
 ## URL Aplikasi Live
 
-* **Frontend (Aplikasi Utama):** `[URL_APLIKASI_LIVE_VERCEL_ANDA]`
-* **Backend (API):** `[URL_BACKEND_RAILWAY_ANDA]`
+* **Frontend (Aplikasi Utama):** `ai-support-triage.vercel.app`
+* **Backend (API):** `ai-support-triage-production.up.railway.app`
 
 *(Catatan: URL Backend dipanggil secara otomatis oleh Frontend)*
 
@@ -105,7 +113,7 @@ Untuk menjalankan proyek ini di lingkungan lokal:
     pip install -r requirements.txt
     ```
 4.  Buka file `app.py`.
-5.  **PENTING:** Ganti nilai variabel `MAKE_WEBHOOK_URL` (di baris ~11) dengan **URL Webhook** Anda.
+5.  **PENTING:** Ganti nilai variabel `https://hook.us2.make.com/np4dlb1pi538gcl0qzdc2f5kqzimapk1` (di baris ~11) dengan **URL Webhook** Anda.
 6.  Jalankan server Flask:
     ```bash
     python app.py
