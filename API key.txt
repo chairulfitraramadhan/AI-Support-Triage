@@ -1,0 +1,8 @@
+Webhook
+https://hook.us2.make.com/np4dlb1pi538gcl0qzdc2f5kqzimapk1
+
+API Key Gemini
+AIzaSyBsAkGO_bfcS3bcDVNVqiyVhY5JJtsmY4s
+
+API key Telegram
+8595099193:AAFGGPNpB4oECzm6E6u1QXzQv8Y8cbCOwHk

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - AI Support Triage</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button title="Ubah Mode Tampilan" id="dark-mode-toggle" class="dark-mode-toggle">🌙</button>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <h1>AI Support Triage</h1>
+            <nav>
+                <a href="index.html" class="active">Beranda</a>
+                <a href="riwayat.html">Riwayat Tiket</a>
+                <a href="tentang.html">Tentang Sistem</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container" id="form-container">
+            
+            <div class="form-group">
+                <label for="namaInput">Nama Anda:</label>
+                <input type="text" id="namaInput" placeholder="Masukkan nama Anda...">
+            </div>
+            
+            <div class="form-group">
+                <label for="emailInput">Email Anda:</label>
+                <input type="email" id="emailInput" placeholder="Masukkan email Anda...">
+            </div>
+            
+            <div class="form-group">
+                <label for="deskripsiInput">Deskripsi Masalah:</label>
+                <textarea id="deskripsiInput" placeholder="Jelaskan masalah Anda secara rinci..."></textarea>
+            </div>
+            
+            <button class="submit-btn" onclick="sendTicket()">Kirim Tiket & Analisis AI</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 AI Support Triage</p>
+    </footer>
+
+    <div id="spinner-overlay" style="display: none;">
+        <div class="spinner"></div>
+        <p>Menganalisis tiket Anda...</p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

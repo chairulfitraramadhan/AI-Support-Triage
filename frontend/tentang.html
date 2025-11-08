@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Sistem - AI Support Triage</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        .container p, .container li {
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+        .container ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <button title="Ubah Mode Tampilan" id="dark-mode-toggle" class="dark-mode-toggle">🌙</button>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <h1>AI Support Triage</h1>
+            <nav>
+                <a href="index.html">Beranda</a>
+                <a href="riwayat.html">Riwayat Tiket</a>
+                <a href="tentang.html" class="active">Tentang Sistem</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h2>Bagaimana Sistem Ini Bekerja</h2>
+            <p>
+                <strong>AI Support Triage</strong> adalah sistem triase tiket dukungan pelanggan
+                berbasis kecerdasan buatan (AI). Sistem ini dikembangkan sebagai proyek UTS
+                mata kuliah <em>Pembelajaran Mesin</em>.
+            </p>
+            <p>
+                Tujuan sistem ini adalah mempercepat proses penanganan tiket dan mengurangi
+                beban tim dukungan pelanggan secara signifikan.
+            </p>
+            <h3>Alur Kerja Sistem</h3>
+            <p>
+                Ketika pengguna mengirim tiket melalui halaman utama, data dikirim ke backend
+                Flask lalu diteruskan ke <strong>Make.com</strong>, di mana <strong>Google Gemini AI</strong>
+                menganalisis deskripsi masalah.
+            </p>
+            <ul>
+                <li><strong>Analisis AI:</strong> Menentukan kategori, urgensi, dan rangkuman tiket.</li>
+                <li><strong>Automasi:</strong> Make.com mengirim notifikasi ke tim (Telegram) dan email ke pengguna (Gmail).</li>
+                <li><strong>Flask Backend:</strong> Menangani komunikasi antara frontend dan Make.com.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 AI Support Triage | Dibuat untuk UTS Pembelajaran Mesin</p>
+    </footer>
+
+    <script>
+        // --- Logika Dark Mode (Wajib ada di tiap halaman) ---
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const bodyEl = document.body;
+
+        // Cek preferensi tersimpan
+        if (localStorage.getItem('theme') === 'dark') {
+            bodyEl.classList.add('dark-mode');
+            darkModeToggle.textContent = '☀️';
+        } else {
+            bodyEl.classList.remove('dark-mode');
+            darkModeToggle.textContent = '🌙';
+        }
+
+        // Atur event klik
+        darkModeToggle.addEventListener('click', () => {
+            bodyEl.classList.toggle('dark-mode');
+            if (bodyEl.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                darkModeToggle.textContent = '☀️';
+            } else {
+                localStorage.setItem('theme', 'light');
+                darkModeToggle.textContent = '🌙';
+            }
+        });
+    </script>
+</body>
+</html>

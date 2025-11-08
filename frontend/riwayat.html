@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Tiket - AI Support Triage</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button title="Ubah Mode Tampilan" id="dark-mode-toggle" class="dark-mode-toggle">🌙</button>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <h1>AI Support Triage</h1>
+            <nav>
+                <a href="index.html">Beranda</a>
+                <a href="riwayat.html" class="active">Riwayat Tiket</a>
+                <a href="tentang.html">Tentang Sistem</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h2>Riwayat Tiket Anda</h2>
+            <div id="riwayatList">
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 AI Support Triage | Dibuat untuk UTS Pembelajaran Mesin</p>
+    </footer>
+
+    <script>
+        // 1. Logika Render Riwayat
+        const list = document.getElementById('riwayatList');
+        // Ambil data dari localStorage, jika tidak ada, gunakan array kosong
+        const data = JSON.parse(localStorage.getItem('riwayatTiket')) || [];
+
+        if (data.length === 0) {
+            list.innerHTML = '<p>Belum ada tiket yang dikirim.</p>';
+        } else {
+            // Balik array agar yang terbaru di atas, lalu buat HTML
+            list.innerHTML = data.reverse().map(t => `
+                <div class="ticket-card">
+                    <p><strong>Nama:</strong> ${t.nama}</p>
+                    <p><strong>Email:</strong> ${t.email}</p>
+                    <p><strong>Deskripsi:</strong> ${t.deskripsi}</p>
+                    <p><em>Dikirim: ${t.tanggal}</em></p>
+                </div>
+            `).join('');
+        }
+
+        //  2. Logika Dark Mode (Wajib ada di tiap halaman)
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const bodyEl = document.body;
+
+        // Cek preferensi tersimpan
+        if (localStorage.getItem('theme') === 'dark') {
+            bodyEl.classList.add('dark-mode');
+            darkModeToggle.textContent = '☀️';
+        } else {
+            bodyEl.classList.remove('dark-mode');
+            darkModeToggle.textContent = '🌙';
+        }
+
+        // Atur event klik
+        darkModeToggle.addEventListener('click', () => {
+            bodyEl.classList.toggle('dark-mode');
+            if (bodyEl.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                darkModeToggle.textContent = '☀️';
+            } else {
+                localStorage.setItem('theme', 'light');
+                darkModeToggle.textContent = '🌙';
+            }
+        });
+    </script>
+</body>
+</html>
