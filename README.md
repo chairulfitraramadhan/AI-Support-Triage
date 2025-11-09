@@ -18,9 +18,7 @@ Nama Lengkap (NIM)
 
 ## Link Video Demonstrasi
 
-    Link Video Demonstrasi Google Drive:
-
-    `https://drive.google.com/file/d/1Bv3I5Yj-l3_MMKG8WFV3ZD3KNY_QkmtV/view?usp=sharing`
+* **Link Video Demonstrasi Google Drive:** `https://drive.google.com/file/d/1Bv3I5Yj-l3_MMKG8WFV3ZD3KNY_QkmtV/view?usp=sharing`
 
 ---
 
@@ -29,7 +27,7 @@ Nama Lengkap (NIM)
 * **Frontend (Aplikasi Utama):** `ai-support-triage.vercel.app`
 * **Backend (API):** `ai-support-triage-production.up.railway.app`
 
-*(Catatan: URL Backend dipanggil secara otomatis oleh Frontend)*
+    *(Catatan: URL Backend dipanggil secara otomatis oleh Frontend)*
 
 ---
 
