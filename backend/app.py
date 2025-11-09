@@ -29,7 +29,7 @@ def handle_question():
             "Deskripsi": deskripsi
         }
 
-        response = requests.post("https://hook.us2.make.com/np4dlb1pi538gcl0qzdc2f5kqzimapk1", json=data_to_send)
+        response = requests.post(MAKE_WEBHOOK_URL, json=data_to_send)
 
         # Cukup periksa apakah Make.com menerima data (200 OK)
         if response.status_code == 200:

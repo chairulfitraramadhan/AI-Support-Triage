@@ -24,8 +24,8 @@ Nama Lengkap (NIM)
 
 ## URL Aplikasi Live
 
-* **Frontend (Aplikasi Utama):** `ai-support-triage.vercel.app`
-* **Backend (API):** `ai-support-triage-production.up.railway.app`
+* **Frontend (Aplikasi Utama):** https://ai-support-triage.vercel.app
+* **Backend (API):** https://ai-support-triage-production.up.railway.app
 
     *(Catatan: URL Backend dipanggil secara otomatis oleh Frontend)*
 

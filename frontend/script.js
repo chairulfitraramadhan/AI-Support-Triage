@@ -7,7 +7,7 @@ const spinnerOverlay = document.getElementById('spinner-overlay');
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 const bodyEl = document.body;
 
-const BACKEND_API_URL = 'ai-support-triage-production.up.railway.app/ask'; 
+const BACKEND_API_URL = 'https://ai-support-triage-production.up.railway.app/ask';
 
 // --- 2. Logika Dark Mode ---
 // Cek preferensi tersimpan di localStorage saat memuat
